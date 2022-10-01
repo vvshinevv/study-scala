@@ -4,6 +4,7 @@ import java.io.File
 
 object Chapter7 {
   def main(args: Array[String]): Unit = {
+    1 :: 2 :: Nil
     inc(1)
   }
 
