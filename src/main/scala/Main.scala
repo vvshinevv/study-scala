@@ -1,8 +1,12 @@
-object Main {
-  def main(args: Array[String]): Unit = {
-    val s: String = "aa"
+import scala.concurrent.ExecutionContext
 
-    val convert = s.toLong
-    println(convert);
-  }
+case class Data[F[_]](data1: F[String])
+
+object MainApp extends App {
+
+  val d1 = Data("")
+}
+
+object Main {
+
 }
