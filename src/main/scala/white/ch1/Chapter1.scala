@@ -1,5 +1,7 @@
 package white.ch1
 
+import scala.collection.mutable
+
 object Chapter1 {
   def main(args: Array[String]): Unit = {
     val greetStrings = new Array[String](3)
@@ -7,10 +9,15 @@ object Chapter1 {
     greetStrings(1) = ", "
     greetStrings(2) = "World"
 
-    greetStrings(0) = "abc"
+    var movieSet1 = Set("a", "b")
+    movieSet1 += "c"
 
-    for (i <- greetStrings.indices)
-      print(greetStrings(i))
+    val movieSet2 = mutable.Set("a", "b")
+    movieSet2 += "c"
+
+
+    val ret = Array.apply(1)
+    ret.apply(2)
   }
 
   def max(x: Int, y: Int): Int = {
