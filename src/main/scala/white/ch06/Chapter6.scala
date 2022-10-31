@@ -1,4 +1,4 @@
-package white.ch6
+package white.ch06
 
 import scala.language.implicitConversions
 
@@ -10,5 +10,7 @@ object Chapter6 extends App {
 
   println(oneHalf * 2)
   println(2 * oneHalf)
+
+  twoThirds.hashCode()
 }
 
