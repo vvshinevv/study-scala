@@ -1,4 +1,4 @@
-package white.ch1
+package white.ch01
 
 import scala.collection.mutable
 

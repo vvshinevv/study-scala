@@ -1,4 +1,4 @@
-package white.ch6
+package white.ch06
 
 import scala.annotation.tailrec
 

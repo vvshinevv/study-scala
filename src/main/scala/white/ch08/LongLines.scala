@@ -1,4 +1,4 @@
-package white.ch8
+package white.ch08
 
 import scala.io.Source
 

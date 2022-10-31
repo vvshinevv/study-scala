@@ -1,4 +1,4 @@
-package white.ch7
+package white.ch07
 
 import java.io.{FileNotFoundException, IOException}
 

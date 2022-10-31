@@ -1,4 +1,4 @@
-package white.ch7
+package white.ch07
 
 class Refactoring {
   def makeRowSeq(row: Int): Seq[String] = {

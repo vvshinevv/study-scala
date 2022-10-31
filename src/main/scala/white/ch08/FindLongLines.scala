@@ -1,4 +1,4 @@
-package white.ch8
+package white.ch08
 
 object FindLongLines extends App {
   val width = args(0).toInt
