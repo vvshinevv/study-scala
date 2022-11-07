@@ -8,4 +8,11 @@ object Chapter8 extends App {
   val z: Int => Int = g
 
   println(z(1))
+
+//  echo(Seq("what", "is", "that?"))
+  echo(Seq("what", "is", "that?"): _*)
+
+  def echo(args: String*) = {
+    for (arg <- args) println _
+  }
 }
