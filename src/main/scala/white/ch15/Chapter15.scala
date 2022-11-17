@@ -5,7 +5,10 @@ object Chapter15 extends App {
   println("res => " + result)
 
   def simplifyToTop(expr: Expr): Expr = expr match {
-    case UnOp("-", UnOp("", e: Expr)) => e
+    case UnOp("-", UnOp("+", e: Expr)) => e
+    case UnOp("-", UnOp("+", Var("X"))) =>
+      println("here?")
+      Var("X")
     case BinOp("+", e, Number(0)) => e
     case BinOp("*", e, Number(1)) => e
     case UnOp("-", UnOp(x, Var(y))) => UnOp("+++", Var("+++"))
@@ -38,12 +41,47 @@ object Chapter15 extends App {
   }
 
   println("binding test => " + isBinding(UnOp("abs", UnOp("abs", Var("X")))))
+
   def isBinding(expr: Expr) = expr match {
-    case UnOp("abs", a @ UnOp("abs", _)) => println(a); a
+    case UnOp("abs", a@UnOp("abs", _)) => println(a); a
     case _ =>
   }
 
   def simplifyAdd(e: Expr) = e match {
     case BinOp("+", x, y) => BinOp("*", x, Number(2))
+  }
+
+  val withDefault: (Int, String) => Int = {
+    case (i, s) =>
+      println(s"i => $i")
+      i
+    case (1, "1") =>
+      println("literal")
+      1
+    case (0, s) => 0
+  }
+
+  println(withDefault(1, "1"))
+
+  val second: PartialFunction[List[Int], Int] = {
+    case x :: y :: _ => y
+  }
+
+  println("second.isDefinedAt(List()) => " + second.isDefinedAt(List()))
+
+
+  val stringSeq = SeqSample.apply(List("a", "b"))
+  val intSeq = SeqSample.apply(List(1, 2))
+  println("stringSeq => " + stringSeq)
+  println("intSeq => " + intSeq)
+}
+
+case class SeqSample(seq: Seq[String]) {
+
+}
+
+object SeqSample {
+  def apply(seq: Seq[Int]): Seq[Int] = {
+    seq
   }
 }
