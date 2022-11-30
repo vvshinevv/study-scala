@@ -39,4 +39,3 @@ object Chapter09 extends App {
   }
 
 }
-
