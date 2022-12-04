@@ -23,8 +23,6 @@ object AnimalRunner extends App {
   def test_contravariant(a: FunctorType[Bird]): Unit = {
     val ret1 = a(new Chicken);
     println(ret1)
-    val ret2 = a();
-    println(ret2)
   }
 
   test_contravariant(animalFunc)
