@@ -16,7 +16,6 @@ object Chapter30 extends App {
   println(result3)
 
   println("=====================")
-
   val mutablePoint = MutablePoint(1, 2)
   val coll = collection.mutable.HashSet(mutablePoint)
 
@@ -26,4 +25,17 @@ object Chapter30 extends App {
   mutablePoint.x += 1
   val result5 = coll contains mutablePoint
   println(result5)
+
+  println("====================")
+  val p = Point(1, 2)
+  val cp = new ColoredPoint(1, 2, Color.Red)
+
+  println(p == cp)
+  println(cp == p)
+
+  println("====================")
+  val redPoint = new ColoredPoint(1, 2, Color.Red)
+  val bluePoint = new ColoredPoint(1, 2, Color.Blue)
+
+
 }
